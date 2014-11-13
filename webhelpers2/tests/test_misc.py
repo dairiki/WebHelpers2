@@ -128,3 +128,7 @@ class TestStudlyException(object):
             assert str(e) == ""
         else:
             raise AssertionError("didn't raise StudlyException")
+
+    def test_init_m_kwarg_not_allowed(self):
+        with pytest.raises(TypeError):
+            StudlyException(m='message')
